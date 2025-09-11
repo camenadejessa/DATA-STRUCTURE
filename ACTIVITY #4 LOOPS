@@ -1,0 +1,49 @@
+//for loop
+
+#include <iostream>
+using namespace std;
+int main (){
+    
+    for (int x = 5; x<=100; x = x + 5)
+    cout << x << endl;
+    
+    return 0;
+}
+
+
+//while loop
+
+#include <iostream>
+using namespace std;
+int main(){
+    
+    int num;
+    int sum = 0;
+    cout << "Enter a number to add (Enter 0 to stop): ";
+    cin >> num;
+    while (num!=0) {
+        sum = sum + num;
+        cout << "Enter a number to add (Enter 0 to stop): ";
+        cin >> num;
+    }
+        cout << "The total of entered numbers is: " << sum;
+    
+    return 0;
+}
+
+
+//do while loop
+
+#include <iostream>
+using namespace std;
+int main () {
+    
+    int x = 100;
+    do {
+        cout << x << endl;
+        x = x - 5;
+    } 
+    while (x >= 5);
+    
+    return 0;
+}
