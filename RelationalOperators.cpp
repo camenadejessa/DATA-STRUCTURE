@@ -14,9 +14,6 @@ int main()
     cout << "b > c: " << (b > c) << endl;
     cout << "(a + c) <= b: " << ((a + c) <= b) << endl;
     cout << "'A' < 'a': " << ('A' < 'a');
-    cout << "\nExplanation: In C++, characters are compared using their ASCII values." << endl;
-    cout << "The ASCII value of 'A' is 65, while 'a' is 97." << endl;
-    cout << "Since 65 < 97, the expression ('A' < 'a') is TRUE (outputs 1)." << endl;
     
     return 0;
 }
