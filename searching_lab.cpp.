@@ -1,0 +1,103 @@
+#include <iostream>
+using namespace std;
+int main (){
+    
+    int my_list[]={5,10,15,20,25,30,35,40,45,50};
+    int size=10;
+    int inp;
+    
+    //ask the user for input
+    cout << "Enter a number to search: ";
+    cin >> inp;
+    // linear search
+    bool found=false;
+    
+    for (int i = 0;i<size;i++){
+        if (my_list[i]==inp){
+            cout << "Element found at Index: " << i << endl;
+            found=true;
+            break;
+        }
+    } 
+    if (!found)
+        cout << "Element not found." << endl;
+    
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main () {
+    
+    //sorted array of 10 integers
+    int my_list[10]={5,10,15,20,25,30,35,40,45,50};
+    int size=10;
+    int inp;
+    
+    cout << "Enter a number to search: ";
+    cin >> inp;
+    
+    int left=0;
+    int right=size-1;
+    bool found=false;
+    
+    //binary search
+    while(left<=right){
+        int mid = (left + right)/2;
+        
+        if (my_list[mid]==inp){
+            cout << "Element found at Index: " << mid << endl; 
+            found=true;
+            break;
+        } else if (my_list[mid]<inp){
+            left=mid+1;//serach for right half
+        } else {
+            right=mid-1;//search for left half
+        }
+    }
+    if (!found){
+        cout << "Element not found.";
+    }
+    
+    
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main () {
+    
+    //sorted array of 10 integer
+    int my_list[10] ={5,10,15,20,25,30,35,40,45,50};
+    int size=10;
+    int inp;
+    // ask user for input
+    cout << "Enter a number to search: ";
+    cin >> inp;
+    // interpolation search
+    int left=0;
+    int right=size-1;
+    bool found = false;
+    
+    while (left<=right&&inp>=my_list[left]&&inp<=my_list[right]){
+        //Estimate the position using interpolation formula
+        int pos = left + ((inp - my_list[left]) * (right - left)) / (my_list[right] - my_list[left]);
+        
+        if (my_list[pos] == inp){
+            cout << "Element found at index: " << pos << endl;
+            found = true;
+            break;
+        }
+        if (my_list[pos]<inp){
+            left = pos + 1; 
+        } else {
+            right = pos - 1;
+        }
+    }
+    
+    if (!found){
+        cout << "Element not found" << endl;
+    }
+    
+    return 0;
+}
